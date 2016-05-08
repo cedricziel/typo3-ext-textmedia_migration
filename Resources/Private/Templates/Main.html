@@ -1,0 +1,29 @@
+<h1>Textmedia Migrator</h1>
+<div class="nowrap">
+    <div class="table-fit">
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th>UID</th>
+                <th>CType</th>
+                <th>&nbsp;</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <f:for each="{records}" as="record">
+                <tr>
+                    <td>{record.uid}</td>
+                    <td>{record.CType}</td>
+                    <td>{record.icon_title -> f:format.raw()}</td>
+                    <td>
+                        <a href="{record.convert_url->f:format.raw()}" class="btn btn-default">Migrate</a>
+                    </td>
+                </tr>
+            </f:for>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<a href="{migrate_pid_link->f:format.raw()}" class="btn btn-default">Migrate all</a>
